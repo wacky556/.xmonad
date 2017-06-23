@@ -1,0 +1,9 @@
+#!/bin/bash
+wget -q --tries=10 --timeout=20 --spider http://google.com
+if [[ $? -eq 0 ]]; then
+	while [[ -z "${var1// }" ]]
+	do 
+	var1=$(curl -s http://w1.weather.gov/xml/current_obs/KSFZ.xml | grep temp_c | cut -f2 -d">" | cut -f1 -d"<")
+	done
+fi
+echo $var1
